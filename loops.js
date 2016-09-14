@@ -97,10 +97,10 @@ nope
 turn
 ```*/
 
-for (i=oopsArray.length; i>=0; --i){
+for (i=oopsArray.length-1; i>=0; i--){
 	console.log(oopsArray[i]);
 }
-//should i be declaring a new variable here for this output? how would this 'return' if i'm only console.logging it?
+//should i be declaring a new variable here for this output? how would this example'return' if i'm only console.logging it?
 
 
 /*## `isNapTime`
@@ -115,7 +115,22 @@ Declare a function named `nap`. This function takes in a single parameter called
 
 Now, Write a FOR loop that iterates through the `napSchedule` array and runs the function `nap` while passing in the value at the current position of `napSchedule` into the `nap` function.*/
 
-
+var isNapTime = false;
+var napSchedule = [false, false, true, false, true, true];
+function nap(schedule){
+	if (schedule === true){
+		console.log("ZzZzZzZz -top");
+	}
+	else{
+		console.log("Bess be steppin', boi");
+		isNapTime = true;
+	}
+}
+	for (var i = 0; i<napSchedule.length; i++){
+		nap(napSchedule[i]);
+}
+/*console.log(nap(napSchedule));
+ALSO, make sure you don't run your FOR loop inside your nap function!*/
 
 
 /*Declare a variable named `valuesArray` and set it's value to be an array, `[99, 66, 829, 1941, 8, 76]`.
