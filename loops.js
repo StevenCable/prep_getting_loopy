@@ -11,45 +11,57 @@ Within the _FOR_ loop, use `console.log` to:
 - Log what is at index `i` in the array. Use a message like `Value at Index is: ` and append the value stored within the Array at that index.*/
 for (var i=0; i<presidents.length; i++){
 	console.log("Value of i is: ", i);
-	var index = presidents[i];
-	console.log("Value at Index of i= " +i+ " is: ", index); 
+	console.log("Value at Index of i= " +i+ " is: ", presidents[i]); 
 	//returns string + president
 	//console.log(("Value at Index at i= " +i+ " is: ", index));
 	//^just returns president
 }
 
 /***bonus:** could you take the code inside of this FOR loop and encapsulate it inside of a function called `printContent` and still achieve the same result? This new function should accept two parameters.*/
-function printContent(vali,indi){
-	console.log("Value of i is: " +vali);
-	console.log("Value of i at " +vali+ " is: ", presidents[vali]);
-		var index = presidents[indi];
-	console.log("Value at Index of i= " +indi+ " is: ", index);
+function printContent(arr){
+	for (var i=0; i<arr.length; i++){
+	console.log("Value of i is: ", i);
+	console.log("Value at Index of i= " +i+ " is: ", arr[i]);
 }
-printContent(0,3);
+return arr;
+}
+printContent(presidents);
+
 
 
 /*Declare a variable named `stringOfNumbers` and set it's value to `''` (an empty String).*/
-var stringOfNumbers = '';
+var stringOfNumbers = "";
 
 /*Then write a _FOR_ loop that appends a Number value to that string starting from `10` all the way up to and including `20`.*/
 for (var i=10; i<=20; i++){
-	console.log(stringOfNumbers, i);
+	stringOfNumbers += i;
 }
-
+ console.log("FOR loop only: " + stringOfNumbers);
 
 /***bonus:** could you take the code inside of this _FOR_ loop and encapsulate it inside of a function called `appendToString` and still achieve the same result?*/
-
-
+var numstr = "";
+function appendToString(numbaStrang){
+	for (var i=10; i<=20; i++){
+		numbaStrang += i;
+}
+return numbaStrang;
+}
+console.log("It's Functioning! " + appendToString(numstr));
 
 /*## `Add only even numbrs to an array`
 Declare a variable named `evenNumberArray`.
 
 Use a _FOR_ loop to add only even numbers to an Array. Add `50` even numbers to the `evenNumberArray` starting with the value `0`.*/
-
-  
+var evenNumberArray = [];
+for (var i =0; i<99; i++){
+	if (i%2===0){
+		evenNumberArray.push(i);
+	}
+}
+  console.log(evenNumberArray);
 
 /*## `Accessing only the odd indexes of an Array - 'Not Even Brah'`
-Someone forgot to fill out this array! Oh noes...
+Someone forgot to fill out dis array! Oh noes...
 
 Declare a new variable named `oopsArray` set it's value to be: `[ 'turn' , , 'down' , , 'for' , , 'what' ]`
 
@@ -59,7 +71,16 @@ Example result should look like:
 
 ```javascript
 `[ 'turn' , 'nope' , 'down' , 'nope' , 'for' , 'nope' , 'what' ]`*/
+var oopsArray = [ 'turn' , , 'down' , , 'for' , , 'what' ];
+for (var i=0; i<oopsArray.length; i++){
+	if (i%2===1){
+	oopsArray[i] = "nope";
+		}
+}
+console.log(oopsArray);
+/*DO THIS ONE AGAIN FROM SCRATCH, I STUMPED MYSELF TRYING TO MAKE IT TOO DIFFICULT.
 
+Remember that [i] translates to the INDEX AT THAT VALUE OF i!!*/
 
 
 /*## `Going backwards?!`
@@ -76,7 +97,10 @@ nope
 turn
 ```*/
 
-
+for (i=oopsArray.length; i>=0; --i){
+	console.log(oopsArray[i]);
+}
+//should i be declaring a new variable here for this output? how would this 'return' if i'm only console.logging it?
 
 
 /*## `isNapTime`
