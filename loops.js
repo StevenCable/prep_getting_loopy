@@ -130,18 +130,25 @@ function nap(schedule){
 		nap(napSchedule[i]);
 }
 /*console.log(nap(napSchedule));
-ALSO, make sure you don't run your FOR loop inside your nap function!*/
+ALSO, make sure you don't run your FOR loop inside your nap function! -sc*/
 
 
 /*Declare a variable named `valuesArray` and set it's value to be an array, `[99, 66, 829, 1941, 8, 76]`.
 
 Declare a function named `copyArray` which takes two arguments: `originArray` and `destinationArray`. Inside of this function you will loop through the contents of `originArray` and push each value into `destinationArray`.
 
-To get started, below your function declaration, call your function and pass in the two variables, `valuesArray` and `copyOfValuesArray`. After that, use `console.log` to to inspect the values of `valuesArray` and `copyOfValuesArray` to make sure they have the same values (which means your function worked!).*/
-
-
-
-
+To get started, below your function declaration, call your function and pass in the two variables, `valuesArray` and `copyOfValuesArray`. After that, use `console.log` to inspect the values of `valuesArray` and `copyOfValuesArray` to make sure they have the same values (which means your function worked!).*/
+	var valuesArray = [99,66,829,1941,8,76];
+	var copyValuesArray = [];
+function copyArray(originArray,destinationArray){
+		for (var i = 0; i<originArray.length; i++){
+		destinationArray.push(originArray[i]);
+	}
+	return destinationArray;
+}
+console.log(copyArray(valuesArray,copyValuesArray));
+/*var poop = valuesArray == copyValuesArray;
+console.log(poop);*/
 
 /*![final-boss](https://s3.amazonaws.com/uploads.hipchat.com/54891/2015941/zamX8AqbgYw0QJ8/giphy.gif)
 
@@ -162,3 +169,62 @@ Your function will iterate through the `class` argument and check each student's
 If the `enrolled` property is set to `true` then change that student's `graduated` property to `true`. Otherwise, if `enrolled` is set to `false` then change `enrolled` to `true` leaving `graduated` alone and unchanged.
 */
 
+var miscStorage = [ [], 'Carrots', 9, 'Beets', {}, {name: "Todd B."}, 'Mush' ];
+function generateArrayOfStrings(storage){
+	var stringArray = [];
+	for (var i=0; i<storage.length; i++){
+		if (typeof storage[i] === typeof ""){
+			stringArray.push(storage[i]);
+		}
+
+	} return stringArray;
+}
+console.log(generateArrayOfStrings(miscStorage));
+
+var currentClass = [
+  {
+    name: 'Doug',
+    graduated: false,
+    enrolled: true
+  },
+  {
+    name: 'Pat',
+    graduated: false,
+    enrolled: false
+  },
+  {
+    name: 'Marsha',
+    graduated: false,
+    enrolled: false
+  },
+  {
+    name: 'Moira',
+    graduated: false,
+    enrolled: true
+  },
+  {
+    name: 'Ben',
+    graduated: false,
+    enrolled: true
+  },
+  {
+    name: 'Nigel the Giraffe',
+    graduated: false,
+    enrolled: false
+  },
+  {
+    name: 'Brandon the Shark',
+    graduated: false,
+    enrolled: true
+  }
+];
+function graduateAndSetNewClass(clAss){
+	for (var i=0; i<clAss.length; i++){
+		if (clAss[i].enrolled === true && clAss[i].graduated === false){
+			clAss[i].graduated = true;
+		}else {
+			clAss[i].enrolled = true;
+		}
+	} return clAss;
+
+} console.log(graduateAndSetNewClass(currentClass));
